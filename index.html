@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Category-Aware Smoke Removal Algorithm for Endoscopic Surgery Videos</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/beforeAfterVideo.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="static/js/beforeAfterVideo.js"></script>
+
+</head>
+<body>
+
+
+<section class="hero is-light hero-section">
+  <div class="hero-body py-5">
+    <div class="container is-max-desktop has-text-centered">
+
+      <!-- 标题 -->
+      <h1 class="title is-2 publication-title">
+        Rethinking Surgical Smoke: 
+        <br>
+        <span class="has-text-link-dark">
+          A Smoke-Type-Aware Laparoscopic Video Desmoking Method and Dataset
+        </span>
+      </h1>
+
+      <!-- ✅ 新增：会议接收信息 -->
+      <p class="has-text-weight-semibold mt-2" 
+         style="font-style: italic; color: #b22222; letter-spacing: 0.03em;">
+        Accepted at <strong>AAAI&nbsp;2026</strong>
+      </p>
+
+      <!-- 作者信息 -->
+      <div class="is-size-5 mt-4 publication-authors">
+        <span><strong>Qifan Liang</strong><sup>1,2,5</sup></span>,
+        <span><strong>Junlin Li</strong><sup>3</sup></span>,
+        <span><strong>Zhen Han*</strong><sup>1,2</sup></span>,
+        <span><strong>Xihao Wang</strong><sup>1,2</sup></span>,
+        <span><strong>Zhongyuan Wang</strong><sup>1,2</sup></span>,
+        <span><strong>Bin Mei</strong><sup>4</sup></span>
+      </div>
+
+      <!-- 单位 -->
+      <div class="is-size-6 has-text-grey mt-2">
+        <p><sup>1</sup> National Engineering Research Center for Multimedia Software, School of Computer Science, Wuhan University, China</p>
+        <p><sup>2</sup> Hubei Key Laboratory of Multimedia and Network Communication Engineering, School of Computer Science, Wuhan University, China</p>
+        <p><sup>3</sup> School of Cyber Science and Engineering, Wuhan University, China</p>
+        <p><sup>4</sup> Zhongnan Hospital, Wuhan University, China</p>
+        <p><sup>5</sup> National University of Singapore, Singapore</p>
+      </div>
+
+      <p class="has-text-grey-light mt-1">* Corresponding author</p>
+    </div>
+  </div>
+</section>
+
+
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- 
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>Arxiv PDF link -->
+
+                    <!-- 
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>Supplementary PDF link -->
+
+                  <!-- Github link -->
+
+  
+  <!-- Anonymous Github -->
+<!-- Cool Button Style -->
+<style>
+  .fancy-link {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white !important;
+    border: none;
+    transition: background 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .fancy-link:hover {
+    background: linear-gradient(135deg, #8ed6fb, #d77ce3);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  }
+
+  .fancy-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 10.01%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s, opacity 1s;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .fancy-link:active::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: 0s;
+  }
+
+  .fancy-icon {
+    margin-right: 6px;
+  }
+
+.link-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.link-btn {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.link-btn .icon {
+  margin-right: 0.4em;
+}
+
+.link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+.disabled-link {
+  background: linear-gradient(135deg, #bcbcbc, #9e9e9e);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.disabled-link:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.hero.teaser {
+  padding-bottom: 1rem !important; /* 缩小整个 section 的底部间距 */
+}
+
+.hero.teaser .subtitle {
+  margin-top: 1rem !important;   /* 调整视频与文字之间距离 */
+  margin-bottom: 0.5rem !important; /* 减小文字与下方 Abstract 的间距 */
+  font-size: 1.05rem;             /* 可选：让标题略小更协调 */
+}
+
+.subtitle.small-text {
+  font-size: 1rem !important; /* 默认约 1.25rem，这里改小一点 */
+  line-height: 1.4;           /* 调整行距 */
+  margin-top: 0.75rem !important; /* 缩小与上方的间距 */
+  margin-bottom: 0.75rem !important; /* 缩小与下方的间距 */
+}
+
+</style>
+
+<!-- JS Ripple Effect (Optional) -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fancy-link').forEach(btn => {
+      btn.addEventListener('click', e => {
+        let ripple = btn.querySelector('::before');
+        ripple?.classList.add('ripple-animate');
+      });
+    });
+  });
+</script>
+
+<!-- Buttons -->
+
+<div class="link-group mt-5">
+
+  <!-- Paper -->
+  <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf"
+     target="_blank"
+     class="external-link button link-btn is-rounded">
+    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+    <span>Arxiv Paper (Supplementary Material)</span>
+  </a>
+
+  <!-- Code -->
+  <a href="https://github.com/YOUR REPO HERE"
+     target="_blank"
+     class="external-link button link-btn is-rounded">
+    <span class="icon"><i class="fab fa-github"></i></span>
+    <span>Paper Github </span>
+  </a>
+
+  <!-- Dataset -->
+  <a href="https://github.com/YOUR REPO HERE"
+     target="_blank"
+     class="external-link button link-btn is-rounded">
+    <span class="icon"><i class="fas fa-database"></i></span>
+    <span>Our Dataset Website</span>
+  </a>
+
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== -->
+<!-- Before-After Video Section -->
+<!-- ===================== -->
+<section class="hero teaser">
+  <div class="before-after-video" id="slider1">
+    <!-- Clean video (bottom) -->
+    <video class="video-layer after-video" src="static/videos/clean_2s.mp4" autoplay muted loop playsinline></video>
+
+    <!-- Smoke video (top) -->
+    <video class="video-layer before-video" src="static/videos/smoky_2s.mp4" autoplay muted loop playsinline></video>
+
+    <!-- Mask layer + slider handle -->
+    <div class="mask-layer">
+      <div class="slider-handle">
+        <div class="slider-line"></div>
+        <div class="slider-circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="subtitle has-text-centered mt-5">
+    <span class="has-text-weight-semibold">Visual Comparison:</span>
+    <span class="has-text-grey-dark">Smoky Video Input vs. Our Desmoking Output</span>
+  </h2>
+</section>
+
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+<div class="content has-text-justified">
+  <p>
+    Electrocautery or lasers will inevitably generate surgical smoke, which hinders the visual guidance of laparoscopic videos for surgical procedures.
+    The surgical smoke can be classified into different types based on its motion patterns, leading to distinctive spatio-temporal characteristics across smoky laparoscopic videos.
+    However, existing desmoking methods fail to account for such smoke-type-specific distinctions.
+    Therefore, we propose the first <strong>S</strong>moke-<strong>T</strong>ype-<strong>A</strong>ware Laparoscopic Video Desmoking <strong>Net</strong>work (STANet) by introducing two smoke types:
+    <strong>Diffusion Smoke</strong> and <strong>Ambient Smoke</strong>.
+    Specifically, a smoke mask segmentation sub-network is designed to jointly conduct smoke mask and smoke type predictions based on the attention-weighted mask aggregation,
+    while a smokeless video reconstruction sub-network is proposed to perform specially desmoking on smoky features guided by two types of smoke mask.
+    To address the entanglement challenges of two smoke types, we further embed a coarse-to-fine disentanglement module into the mask segmentation sub-network,
+    which yields more accurate disentangled masks through the smoke-type-aware cross attention between non-entangled and entangled regions.
+    In addition, we also construct the first large-scale synthetic video desmoking dataset with smoke type annotations.
+    Extensive experiments demonstrate that our method not only outperforms state-of-the-art approaches in quality evaluations,
+    but also exhibits superior generalization across multiple downstream surgical tasks.
+  </p>
+</div>
+
+      </div>
+    </div>
+        <div class="hero-body">
+        <img src="static/images/framework.png" alt="Banner Image" style="width: 100%; height: auto;" />
+
+      <h2 class="subtitle small-text has-text-centered mt-5">
+        The overall framework of our STANet. The pink, blue and orange regions respectively denote the Smoky Feature Perception Sub-network, the Smoke Mask Segmentation Sub-network and the Smokeless Video Reconstruction Sub-network.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!--
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="container">
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Methods</h2>
+          <div class="publication-video">
+            <img src="static/images/framework.png" alt="MY ALT TEXT"/>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+
+
+
+<section class="section hero is-light" style="background-color: #FFFFFF; padding-top: 3rem; padding-bottom: 3rem;">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- ===== 标题 ===== -->
+        <h2 class="title is-3" style="font-weight: 900; text-shadow: 1px 1px 3px rgba(255, 50, 50, 0.6); color: #b22222;">
+          <span class="icon is-large has-text-danger">
+            <i class="fas fa-fire fa-lg"></i>
+          </span>
+          <strong>Datasets</strong>
+          <span class="icon is-large has-text-danger">
+            <i class="fas fa-fire fa-lg"></i>
+          </span>
+        </h2>
+
+        <!-- ✅ 新增说明文字 -->
+        <p class="has-text-centered" 
+           style="font-size: 1.05rem; color: #555; max-width: 800px; margin: 0 auto 1.5rem auto; line-height: 1.6;">
+            Due to the lack of smoke type annotations in existing desmoking datasets, 
+            we construct a large-scale <strong>S</strong>moke-<strong>T</strong>ype-<strong>S</strong>pecific 
+            <strong>V</strong>ideo <strong>D</strong>esmoking (<strong>STSVD</strong>) dataset, 
+            including 120 videos (100 frames each, 720&times;1080 resolution) 
+            with semantic labels for <strong>Diffusion Smoke</strong>, 
+            <strong>Ambient Smoke</strong>, and their <strong>entanglement</strong> 
+            across 28 types of surgical scenarios.
+        </p>
+
+        <!-- 图片展示 -->
+        <div style="box-shadow: 0 8px 24px rgba(0,0,0,0.12); border-radius: 12px; overflow: hidden; margin-top: 1.5rem;">
+          <img src="static/videos/dataset.gif" alt="Dataset Pipeline and Statistics" style="width: 100%; height: auto; display: block;" />
+        </div>
+
+        <!-- 图注 -->
+        <h2 class="subtitle small-text has-text-centered mt-4"
+            style="font-style: italic; letter-spacing: 0.03em; color: #666;">
+          Dataset Overview: From top to bottom are Diffusion Smoke, Ambient Smoke, and their entanglement,
+          along with their corresponding GT smoke masks.
+        </h2>
+
+        <!-- 按钮 -->
+        <div class="buttons is-centered mt-4">
+          <a class="button is-danger is-medium is-rounded" href="https://your-dataset-site.com" target="_blank" 
+             style="background: linear-gradient(135deg, #ff4e50, #f9d423); border: none; box-shadow: 0 4px 12px rgba(249, 212, 35, 0.6); transition: transform 0.3s ease;">
+            <span class="icon">
+              <i class="fas fa-database"></i>
+            </span>
+            <span>Explore Our Dataset</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  a.button.is-danger:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(249, 212, 35, 0.8);
+  }
+</style>
+
+
+
+
+<!-- Image carousel/hero is-small is-light -->
+<!-- ===== Experiment Section ===== -->
+<section class="section hero is-light" style="padding-bottom: 2rem;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <!-- 标题 -->
+          <h2 class="title is-3">Experiment: Visual Comparisons</h2>
+
+          <!-- 图片轮播 -->
+          <div id="results-carousel" class="carousel results-carousel">
+
+            <!-- 第一组 -->
+            <div class="item">
+              <img src="static/images/STSVD.png" alt="Visual Comparison on STSVD Dataset"/>
+              <h2 class="subtitle small-text has-text-centered mt-4"
+                  style="font-style: italic; letter-spacing: 0.03em; color: #666;">
+                Qualitative desmoking results on the STSVD dataset, showing outputs from our method
+                and other state-of-the-art techniques.
+              </h2>
+            </div>
+
+            <!-- 第二组 -->
+            <div class="item">
+              <img src="static/images/Vivo.png" alt="Visual Comparison on Vivo Dataset"/>
+              <h2 class="subtitle small-text has-text-centered mt-4"
+                  style="font-style: italic; letter-spacing: 0.03em; color: #666;">
+                Qualitative desmoking results on the Vivo dataset, showing outputs from our method
+                and other state-of-the-art techniques.
+              </h2>
+            </div>
+
+            <!-- 第三组 -->
+            <div class="item">
+              <img src="static/images/STSVDR.png" alt="Visual Comparison on STSVDR Dataset"/>
+              <h2 class="subtitle small-text has-text-centered mt-4"
+                  style="font-style: italic; letter-spacing: 0.03em; color: #666;">
+                Qualitative desmoking results on the STSVDR dataset, showing outputs from our method
+                and other state-of-the-art techniques.
+              </h2>
+            </div>
+
+          </div> <!-- carousel end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Ethics Statement Section ===== -->
+<section class="section hero is-light"
+         style="padding-top: 2rem; margin-top: -1rem; border-top: 1px solid #eee;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3">Ethics Statement</h2>
+
+        <div class="content has-text-justified" style="max-width: 850px; margin: 0 auto;">
+          <p>
+            All data used in this study are derived from publicly available laparoscopic surgery datasets
+            that are released with appropriate usage permissions. No personally identifiable information
+            or patient-sensitive data is involved.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Optional Styling ===== -->
+<style>
+  /* 让上下两块视觉更紧凑 */
+  section.section.hero.is-light {
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+  }
+
+  section.section.hero.is-light:last-of-type {
+    padding-top: 2rem !important;
+    margin-top: -1rem !important;
+  }
+
+  /* 淡分隔线，视觉更平衡 */
+  section.section.hero.is-light + section.section.hero.is-light {
+    border-top: 1px solid #eee;
+  }
+
+  .subtitle.small-text {
+    font-size: 1rem !important;
+    line-height: 1.4;
+    margin-top: 1rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+</style>
+
+
+
+<!--BibTex citation (will be updated after acceptance) -->
+<section class="mt-6">
+  <div class="container is-max-desktop">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+% The official BibTeX entry will be provided upon AAAI-26 publication.
+% Please check back later for the updated citation.
+      </code></pre>
+    </div>
+  </div>
+</section>
+
+
+
+<!--End BibTex citation -->
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+
+          <!-- Visitor Counter -->
+<div class="visitor-counter">
+  <a href="https://www.hitwebcounter.com" target="_blank">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=20755695&style=0005&nbdigits=5&type=page&initCount=0"
+         title="Visitor Counter" alt="Visitor Counter" />
+  </a>
+  <div class="visitor-label">Visitor Count</div>
+</div>
+
+          <!-- Original Footer Text -->
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+    <!-- Script -->
+  <!-- 这个应该在 body 末尾，确保 DOM 完成 -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    initBeforeAfterSlider('slider1');
+  });
+</script>
+
+  </body>
+  </html>
